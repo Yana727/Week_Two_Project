@@ -8,11 +8,11 @@ console.log(data);
 // 1: Show me how to calculate the average price of all items.
 function question1 () {
     let total = 0
-    let avarage = 0
+    let average = 0
      for (i = 0; i < data.length; i++) {
-       total += data[i].price
+       total = total + data[i].price // += would replace the second "total"
     }
-    average = total / data.length
+    average = (total / data.length).toFixed (2)
     console.log(average)
   }
 
