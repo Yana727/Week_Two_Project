@@ -9,7 +9,7 @@ console.log(data);
 function question1 () {
     let total = 0
     let average = 0
-     for (i = 0; i < data.length; i++) {
+     for (let i = 0; i < data.length; i++) {
        total = total + data[i].price // += would replace the second "total"
     }
     average = (total / data.length).toFixed (2)
@@ -19,20 +19,32 @@ function question1 () {
 
 // 2: Show me how to get an array of items that cost between $14.00 and $18.00 USD
 function question2 () {
-  // Answer:
+    for (let i = 0; i < data.length; i++){
+       if((data[i].price > 13.99) && (data[i].price < 18.01)){
+         console.log(data[i])
+       } //Something isn't working here...
+    }
 }
-
 
 
 // 3: Which item has a "GBP" currency code? Display it's name and price.
 function question3 () {
-  // Answer:
+  for (let i = 0; i < data.length; i++) {
+    if(data[i].currency_code === 'GBP') {
+
+      console.log(data[i].title + 'costs' + data[i].price + ' pounds')
+    }
+  }
 }
 
 
 // 4: Display a list of all items who are made of wood.
 function question4 () {
-  // Answer:
+  for (let i = 0; i < data.length; i++) {
+    if (data[i].materials.includes ('wood')){
+     console.log(data[i].materials)
+   } //Not working...!!!!
+  }
 }
 
 
