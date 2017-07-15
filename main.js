@@ -13,7 +13,7 @@ function question1 () {
        total = total + data[i].price // += would replace the second "total"
     }
     average = (total / data.length).toFixed (2)
-    console.log(average)
+    console.log('The average is ' + average)
   }
 
 
@@ -21,8 +21,8 @@ function question1 () {
 function question2 () {
     for (let i = 0; i < data.length; i++){
        if((data[i].price > 13.99) && (data[i].price < 18.01)){
-         console.log(data[i])
-       } //Something isn't working here...
+         console.log(data[i].title)
+       }
     }
 }
 
@@ -42,7 +42,7 @@ function question3 () {
 function question4 () {
   for (let i = 0; i < data.length; i++) {
     if (data[i].materials.includes ('wood')){
-     console.log(data[i].materials)
+     console.log(data[i].title)
    }
   }
 }
@@ -54,19 +54,20 @@ function question5 () {
   for (let i = 0; i < data.length; i++){
 
     if(data[i].materials.length >= 8){
-      console.log(data[i].title, data[i].materials, data[i].quantity);
+      console.log(data[i].title,data[i].materials,data[i].quantity);
     }
   }
 }
-
-
+//, data[i]
 // 6: How many items were made by their sellers?
 // Answer:
+
 function question6 () {
+  let usermade = 0;
   for (let i = 0; i < data.length; i++){
-    if(data[i].who_made == 'i_did'){
-      
+    if(data[i].who_made === 'i_did'){
+      usermade++
     }
-    console.log(data[i].quantity)
+  }
+    console.log(usermade + 'were made by their sellers')
  }
-}
